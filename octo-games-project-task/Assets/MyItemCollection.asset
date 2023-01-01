@@ -29,6 +29,22 @@ MonoBehaviour:
   m_Name: Items
   m_EditorClassIdentifier: 
   m_ID: 669031858
+--- !u!114 &-3989310912847611534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e74c32144565264eb86dc7514aca7f7, type: 3}
+  m_Name: MyPistolBullet
+  m_EditorClassIdentifier: 
+  m_ID: 5
+  m_CategoryIDs: b29de027
+  m_Description: 
+  m_Capacity: 2147483647
 --- !u!114 &-414557262375027954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +80,8 @@ MonoBehaviour:
   - {fileID: -414557262375027954}
   - {fileID: -7311281842579979244}
   - {fileID: 2157945311739874622}
+  - {fileID: 7898144883126677925}
+  - {fileID: -3989310912847611534}
 --- !u!114 &2157945311739874622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +111,22 @@ MonoBehaviour:
   m_Name: MyAssaultRifle
   m_EditorClassIdentifier: 
   m_ID: 0
+  m_CategoryIDs: b29de027
+  m_Description: 
+  m_Capacity: 1
+--- !u!114 &7898144883126677925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e74c32144565264eb86dc7514aca7f7, type: 3}
+  m_Name: MyPistol
+  m_EditorClassIdentifier: 
+  m_ID: 4
   m_CategoryIDs: b29de027
   m_Description: 
   m_Capacity: 1
