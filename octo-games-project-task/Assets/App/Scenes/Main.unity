@@ -10895,6 +10895,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1062683299022398, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1068242642699418, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
       propertyPath: m_Layer
       value: 30
@@ -10946,6 +10950,10 @@ PrefabInstance:
     - target: {fileID: 1196285396271740, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
       propertyPath: m_Layer
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196285396271740, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1198047935842026, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
       propertyPath: m_Layer
@@ -11079,6 +11087,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1556555336239580, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1577775109172116, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
       propertyPath: m_Layer
       value: 30
@@ -11171,6 +11183,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1819564606238470, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1820416473181658, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
       propertyPath: m_Name
       value: Character - Hunter Male
@@ -11234,6 +11250,10 @@ PrefabInstance:
     - target: {fileID: 1976617424173932, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
       propertyPath: m_Layer
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976617424173932, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1976737514308638, guid: bb300d8944d3a594f8a617a030409eb4, type: 3}
       propertyPath: m_Layer
