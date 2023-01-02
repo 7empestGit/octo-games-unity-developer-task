@@ -10237,8 +10237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenWaves: 5
   enemyPoolSize: 20
-  countdown: 2
-  enemyPrefab: {fileID: 6904059037130744648, guid: e86fab22a7eb2c94899f0f8804f22fc1, type: 3}
+  enemyPrefab: {fileID: 7895530773044898948, guid: cb4fac3020cb4f34ca12a3f8fd6ca0bd, type: 3}
   player: {fileID: 2119620038}
   spawnPoint: {fileID: 2057250870}
 --- !u!1001 &1882620824

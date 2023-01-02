@@ -1,27 +1,38 @@
+using App.GameEvents;
+using DynamicBox.EventManagement;
+using Opsive.UltimateCharacterController.Character;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AI;
+using Opsive.UltimateCharacterController.Character.Abilities.AI;
 
-public class EnemyController : MonoBehaviour
+namespace App.Controllers
 {
-  [SerializeField] private NavMeshAgent agent;
-
-  private Transform player;
-
-  void OnEnable ()
+  public class EnemyController : MonoBehaviour
   {
-    SetDestinationAsync ();
-  }
+    [Header ("Links")]
+    [SerializeField] private UltimateCharacterLocomotion locomotion;
 
-  public void SetTarget (Transform target)
-  {
-    player = target;
-  }
+    private Transform player;
 
-  private async void SetDestinationAsync ()
-  {
-    await Task.Delay (500);
-    agent.SetDestination (player.position);
-    SetDestinationAsync ();
+    #region Unity Methods
+
+    #endregion
+
+    public void SetTarget (Transform target)
+    {
+      player = target;
+    }
+
+    public void OnPlayerDeath ()
+    {
+      EventManager.Instance.Raise (new CheckForAliveEnemiesEvent ());
+    }
+
+    public async void SetDestinationAsync ()
+    {
+      await Task.Delay (500);
+      locomotion.GetAbility<NavMeshAgentMovement> ().SetDestination (player.position);
+      SetDestinationAsync ();
+    }
   }
 }
