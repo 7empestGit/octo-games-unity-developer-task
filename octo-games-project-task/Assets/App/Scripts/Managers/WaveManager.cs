@@ -1,7 +1,10 @@
 using App.Controllers;
 using App.GameEvents;
 using DynamicBox.EventManagement;
+using Opsive.Shared.Game;
+using Opsive.UltimateCharacterController.Traits;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -11,19 +14,17 @@ namespace App.Managers
   {
     [Header ("Parameters")]
     [Range (3, 10)][SerializeField] private int timeBetweenWaves = 5;
-    [SerializeField] private int enemyPoolSize = 20;
+    [SerializeField] private int enemyPoolSize = 10;
     [SerializeField] private const int enemySpawnDelay = 500;
 
     [Header ("Links")]
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Transform player;
-    [SerializeField] private Transform spawnPoint;
 
     private List<GameObject> enemyPool;
     private int waveNumber = 1;
     private GameObject enemyPoolParent;
-
-    private const int enemyPoolSpawnDelay = 0;
+    private const int enemyPoolSpawnDelay = 500;
 
     #region Unity Methods
 
@@ -37,7 +38,7 @@ namespace App.Managers
       EventManager.Instance.RemoveListener<CheckForAliveEnemiesEvent> (CheckForAliveEnemiesEventHandler);
     }
 
-    void Start ()
+    void Awake ()
     {
       enemyPool = new List<GameObject> ();
 
@@ -53,21 +54,10 @@ namespace App.Managers
     {
       for (int i = 0; i < enemyPoolSize; i++)
       {
-        GameObject instanceObj = Instantiate (enemyPrefab, enemyPoolParent.transform);
+        GameObject instanceObj = ObjectPool.Instantiate (enemyPrefab, enemyPoolParent.transform);
         await Task.Delay (enemyPoolSpawnDelay);
-        instanceObj.SetActive (false);
         enemyPool.Add (instanceObj);
       }
-
-      StartWaveAsync ();
-    }
-
-    private async void CheckForAliveEnemiesAsync ()
-    {
-      if (IsAnyEnemyAlive ())
-        return;
-
-      await Task.Delay (timeBetweenWaves);
 
       StartWaveAsync ();
     }
@@ -88,26 +78,31 @@ namespace App.Managers
 
     private void SpawnEnemy ()
     {
-      GameObject obj = enemyPool.Find (o => !o.gameObject.activeInHierarchy);
+      GameObject obj = enemyPool.Find (o => !o.activeInHierarchy);
       if (obj == null)
       {
-        // If no inactive objects are available, create a new one
-        obj = Instantiate (enemyPrefab, enemyPoolParent.transform);
+        // If no active enemies are available, create a new one
+        obj = ObjectPool.Instantiate (enemyPrefab, enemyPoolParent.transform);
         enemyPool.Add (obj);
       }
 
       obj.SetActive (true);
-      obj.transform.position = spawnPoint.position;
-      obj.transform.rotation = spawnPoint.rotation;
-
-      obj.GetComponent<EnemyController> ().SetTarget (player);
-      obj.GetComponent<EnemyController> ().SetDestinationAsync ();
+      obj.GetComponent<EnemyController> ().ActivateEnemy (player);
     }
 
+    private async void CheckForAliveEnemiesAsync ()
+    {
+      if (IsAnyEnemyAlive ())
+        return;
+
+      await Task.Delay (timeBetweenWaves);
+
+      StartWaveAsync ();
+    }
 
     private bool IsAnyEnemyAlive ()
     {
-      GameObject firstAliveEnemy = enemyPool.Find (i => i.gameObject.activeSelf == true);
+      GameObject firstAliveEnemy = enemyPool.Find (i => i.activeInHierarchy);
 
       return firstAliveEnemy != null;
     }
