@@ -11099,7 +11099,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locomotion: {fileID: 0}
-  localLookSource: {fileID: 0}
 --- !u!195 &1312937697
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15158,7 +15157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec179f9473f7f9849bab9aac78619ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StartCharacterCount: 1
+  m_StartCharacterCount: 2
   m_StartCameraCount: 1
   m_StartKinematicObjectCount: 0
   m_AutoSyncTransforms: 0
@@ -31681,5 +31680,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie_Male_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e387094fca0bc3a4181800fa960ea16b, type: 3}
+--- !u!1 &5173325350499113895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5174615258508306251, guid: e387094fca0bc3a4181800fa960ea16b, type: 3}
+  m_PrefabInstance: {fileID: 5173325350499113894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5173325350499113896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8672744549316153505, guid: e387094fca0bc3a4181800fa960ea16b, type: 3}
+  m_PrefabInstance: {fileID: 5173325350499113894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173325350499113895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98028e089f7f9154d8b637cf107f8d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5173325350499113897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173325350499113895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00afbeb5ebb706b4088ca5abffad9646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locomotion: {fileID: 5173325350499113896}
+  player: {fileID: 0}

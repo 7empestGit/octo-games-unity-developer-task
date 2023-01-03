@@ -7311,7 +7311,7 @@ GameObject:
   - component: {fileID: 4500503017480614687}
   - component: {fileID: 4685855616113423474}
   - component: {fileID: 3613566396210115501}
-  - component: {fileID: 1188054512879481983}
+  - component: {fileID: -7697841413191363720}
   m_Layer: 31
   m_Name: Zombie_Male_1
   m_TagString: Untagged
@@ -7404,7 +7404,7 @@ MonoBehaviour:
     m_Default: 1
   m_EnemyLayers:
     serializedVersion: 2
-    m_Bits: 67108864
+    m_Bits: 2147483648
   m_InvisibleLayers:
     serializedVersion: 2
     m_Bits: 1879048230
@@ -7709,7 +7709,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5174615258508306251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f83d17adab56f24e973892138b321f1, type: 3}
   m_Name: 
@@ -7861,7 +7861,7 @@ MonoBehaviour:
   m_OnDeathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1188054512879481983}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: App.Controllers.EnemyController, Assembly-CSharp
         m_MethodName: OnPlayerDeath
         m_Mode: 1
@@ -7921,7 +7921,7 @@ MonoBehaviour:
     m_Preset: {fileID: 0}
     m_BlockList: []
     m_Default: 1
-  m_PositioningMode: 1
+  m_PositioningMode: 2
   m_Grouping: 1
   m_MinRespawnTime: 2
   m_MaxRespawnTime: 3
@@ -7932,7 +7932,19 @@ MonoBehaviour:
     m_AudioClips: []
   m_OnRespawnEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7697841413191363720}
+        m_TargetAssemblyTypeName: App.Controllers.EnemyController, Assembly-CSharp
+        m_MethodName: OnPlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4500503017480614687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8064,7 +8076,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1188054512879481983
+--- !u!114 &-7697841413191363720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8077,7 +8089,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locomotion: {fileID: 8672744549316153505}
-  localLookSource: {fileID: 2603378493453887008}
 --- !u!1 &5174617542747345621
 GameObject:
   m_ObjectHideFlags: 0

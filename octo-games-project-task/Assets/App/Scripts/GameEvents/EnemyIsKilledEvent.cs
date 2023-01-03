@@ -2,7 +2,7 @@
 
 namespace App.GameEvents
 {
-  public class CheckForAliveEnemiesEvent : GameEvent
+  public class EnemyIsKilledEvent : GameEvent
   {
 
   }
