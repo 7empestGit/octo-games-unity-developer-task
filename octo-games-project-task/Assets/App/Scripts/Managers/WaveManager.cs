@@ -75,13 +75,6 @@ namespace App.Managers
       obj.GetComponent<EnemyController> ().ActivateEnemy (player);
     }
 
-    private bool IsAnyEnemyAlive ()
-    {
-      GameObject firstActiveEnemy = enemyPool.Find (obj => obj.activeInHierarchy);
-
-      return firstActiveEnemy != null;
-    }
-
     #region Event Handlers
 
     private void EnemyIsKilledEventHandler (EnemyIsKilledEvent eventDetails)
