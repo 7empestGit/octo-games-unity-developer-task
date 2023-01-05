@@ -7,6 +7,7 @@ using Opsive.UltimateCharacterController.Character.Abilities.AI;
 using Opsive.UltimateCharacterController.Character.Abilities.Items;
 using Opsive.UltimateCharacterController.Traits;
 using System.Linq;
+using System.Collections;
 
 namespace App.Controllers
 {
@@ -18,15 +19,13 @@ namespace App.Controllers
     private Transform player;
     private NavMeshAgentMovement navMeshAgentMovement;
 
-    #region Unity Methods
-
-    #endregion
+    private WaitForSeconds setDestinationDelay = new WaitForSeconds (0.2f);
 
     public void ActivateEnemy (Transform target)
     {
       player = target;
       SetTarget ();
-      SetDestinationAsync ();
+      StartCoroutine (SetDestinationAsync ());
     }
 
     private void SetTarget ()
@@ -37,17 +36,16 @@ namespace App.Controllers
 
     public void OnPlayerDeath ()
     {
-      //gameObject.SetActive (false);
       EventManager.Instance.Raise (new EnemyIsKilledEvent ());
     }
 
-    private async void SetDestinationAsync ()
+    private IEnumerator SetDestinationAsync ()
     {
-      await Task.Delay (100);
+      yield return setDestinationDelay;
       navMeshAgentMovement.SetDestination (player.position);
 
       if (gameObject.activeInHierarchy)
-        SetDestinationAsync ();
+        StartCoroutine(SetDestinationAsync ());
 
       if (navMeshAgentMovement.HasArrived)
         Attack ();

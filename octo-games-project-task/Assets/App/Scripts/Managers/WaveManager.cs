@@ -16,7 +16,7 @@ namespace App.Managers
     [SerializeField] private int enemyPoolSize = 10;
 
     [Header ("Links")]
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private Transform player;
 
     private List<GameObject> enemyPool;
@@ -49,18 +49,18 @@ namespace App.Managers
 
     private async void SpawnEnemyPool ()
     {
-      // spawn first one without delays
-      GameObject instanceObj = ObjectPool.Instantiate (enemyPrefab, enemyPoolParent.transform);
-      instanceObj.SetActive (false);
-      enemyPool.Add (instanceObj);
-      ActivateFirstInactiveEnemy ();
-
-      for (int i = 0; i < enemyPoolSize - 1; i++)
+      for (int i = 0; i < enemyPoolSize; i++)
       {
-        instanceObj = ObjectPool.Instantiate (enemyPrefab, enemyPoolParent.transform);
+        int randomEnemyTypeIndex = Random.Range (0, enemyPrefabs.Count);
+        GameObject instanceObj = ObjectPool.Instantiate (enemyPrefabs[randomEnemyTypeIndex], enemyPoolParent.transform);
         instanceObj.SetActive (false);
-        await Task.Delay (enemyPoolSpawnDelay);
         enemyPool.Add (instanceObj);
+
+        // activate first enemy without delay
+        if (i == 0)
+          ActivateFirstInactiveEnemy ();
+
+        await Task.Delay (enemyPoolSpawnDelay);
       }
     }
 
