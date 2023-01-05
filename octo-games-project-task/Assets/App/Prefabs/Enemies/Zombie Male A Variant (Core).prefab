@@ -335,7 +335,7 @@ MonoBehaviour:
   m_AllowCameraZoom: 0
   m_DropPrefab: {fileID: 0}
   m_FullInventoryDrop: 0
-  m_DropConsumableItems: 1
+  m_DropConsumableItems: 0
   m_EquipEvent:
     m_WaitForAnimationEvent: 0
     m_Duration: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_AllowAttackCombos: 1
   m_ImpactLayers:
     serializedVersion: 2
-    m_Bits: 3489660873
+    m_Bits: 3221225473
   m_TriggerInteraction: 1
   m_DamageProcessor: {fileID: 0}
   m_DamageAmount: 10
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_AllowCameraZoom: 0
   m_DropPrefab: {fileID: 0}
   m_FullInventoryDrop: 0
-  m_DropConsumableItems: 1
+  m_DropConsumableItems: 0
   m_EquipEvent:
     m_WaitForAnimationEvent: 0
     m_Duration: 0
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_AllowAttackCombos: 1
   m_ImpactLayers:
     serializedVersion: 2
-    m_Bits: 3489660873
+    m_Bits: 3221225473
   m_TriggerInteraction: 1
   m_DamageProcessor: {fileID: 0}
   m_DamageAmount: 10
@@ -8146,7 +8146,7 @@ MonoBehaviour:
   m_ForwardMovementDampingTime: 0.1
   m_PitchDampingTime: 0.1
   m_YawDampingTime: 0.1
-  m_AnimatorSpeed: 0.1
+  m_AnimatorSpeed: 1
 --- !u!114 &8672744549316153505
 MonoBehaviour:
   m_ObjectHideFlags: 0
