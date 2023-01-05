@@ -2634,7 +2634,7 @@ AnimatorStateMachine:
     m_Position: {x: 397.5, y: 57, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6932434621225825618}
-    m_Position: {x: 397.5, y: -3, z: 0}
+    m_Position: {x: 400, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -2998,7 +2998,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyAnimator
+  m_Name: EnemyAnimator - Copy
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: HorizontalMovement
@@ -34316,7 +34316,7 @@ BlendTree:
     m_DirectBlendParameter: HorizontalMovement
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 46c0fe5948764da4ea4363abfe116767, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: 73dafb25ccf4ccf40a03ab4d71d49cc1, type: 3}
     m_Threshold: 0.5833333
     m_Position: {x: 0, y: 2}
     m_TimeScale: 1

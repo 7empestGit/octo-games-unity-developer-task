@@ -32,7 +32,7 @@ namespace App.Controllers
     private void SetTarget ()
     {
       navMeshAgentMovement = locomotion.GetAbility<NavMeshAgentMovement> ();
-      navMeshAgentMovement.ArrivedDistance = 2f;
+      navMeshAgentMovement.ArrivedDistance = 1f;
     }
 
     public void OnPlayerDeath ()
@@ -43,14 +43,14 @@ namespace App.Controllers
 
     private async void SetDestinationAsync ()
     {
-      await Task.Delay (500);
+      await Task.Delay (100);
       navMeshAgentMovement.SetDestination (player.position);
-
-      if (navMeshAgentMovement.HasArrived)
-        Attack ();
 
       if (gameObject.activeInHierarchy)
         SetDestinationAsync ();
+
+      if (navMeshAgentMovement.HasArrived)
+        Attack ();
     }
 
     private void Attack ()

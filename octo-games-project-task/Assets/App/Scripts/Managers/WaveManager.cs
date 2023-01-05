@@ -51,12 +51,14 @@ namespace App.Managers
     {
       // spawn first one without delays
       GameObject instanceObj = ObjectPool.Instantiate (enemyPrefab, enemyPoolParent.transform);
+      instanceObj.SetActive (false);
       enemyPool.Add (instanceObj);
       ActivateFirstInactiveEnemy ();
 
       for (int i = 0; i < enemyPoolSize - 1; i++)
       {
         instanceObj = ObjectPool.Instantiate (enemyPrefab, enemyPoolParent.transform);
+        instanceObj.SetActive (false);
         await Task.Delay (enemyPoolSpawnDelay);
         enemyPool.Add (instanceObj);
       }
@@ -66,7 +68,7 @@ namespace App.Managers
     {
       GameObject obj = enemyPool.Find (o => !o.activeInHierarchy);
 
-      if (obj == null && !IsAnyEnemyAlive ())
+      if (obj == null)
         return;
 
       obj.SetActive (true);
