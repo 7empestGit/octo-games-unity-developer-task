@@ -2,9 +2,7 @@ using App.Controllers;
 using App.GameEvents;
 using DynamicBox.EventManagement;
 using Opsive.Shared.Game;
-using Opsive.UltimateCharacterController.Traits;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -28,14 +26,18 @@ namespace App.Managers
     void OnEnable ()
     {
       EventManager.Instance.AddListener<EnemyIsKilledEvent> (EnemyIsKilledEventHandler);
+      EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
     }
 
     void OnDisable ()
     {
       EventManager.Instance.RemoveListener<EnemyIsKilledEvent> (EnemyIsKilledEventHandler);
+      EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
     }
 
-    void Awake ()
+    #endregion
+
+    private void StartSpawning ()
     {
       enemyPool = new List<GameObject> ();
 
@@ -44,8 +46,6 @@ namespace App.Managers
 
       SpawnEnemyPool ();
     }
-
-    #endregion
 
     private async void SpawnEnemyPool ()
     {
@@ -80,6 +80,11 @@ namespace App.Managers
     private void EnemyIsKilledEventHandler (EnemyIsKilledEvent eventDetails)
     {
       ActivateFirstInactiveEnemy ();
+    }
+
+    private void StartGameEventHandler (StartGameEvent eventDetails)
+    {
+      StartSpawning ();
     }
 
     #endregion
