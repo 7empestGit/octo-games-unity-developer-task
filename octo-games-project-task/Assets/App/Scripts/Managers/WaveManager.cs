@@ -25,13 +25,13 @@ namespace App.Managers
 
     void OnEnable ()
     {
-      EventManager.Instance.AddListener<EnemyIsKilledEvent> (EnemyIsKilledEventHandler);
+      EventManager.Instance.AddListener<EnemyIsDeadEvent> (EnemyIsKilledEventHandler);
       EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
     }
 
     void OnDisable ()
     {
-      EventManager.Instance.RemoveListener<EnemyIsKilledEvent> (EnemyIsKilledEventHandler);
+      EventManager.Instance.RemoveListener<EnemyIsDeadEvent> (EnemyIsKilledEventHandler);
       EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
     }
 
@@ -77,7 +77,7 @@ namespace App.Managers
 
     #region Event Handlers
 
-    private void EnemyIsKilledEventHandler (EnemyIsKilledEvent eventDetails)
+    private void EnemyIsKilledEventHandler (EnemyIsDeadEvent eventDetails)
     {
       ActivateFirstInactiveEnemy ();
     }

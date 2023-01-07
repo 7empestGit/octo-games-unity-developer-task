@@ -36,7 +36,7 @@ namespace App.Controllers
 
     public void OnPlayerDeath ()
     {
-      EventManager.Instance.Raise (new EnemyIsKilledEvent ());
+      EventManager.Instance.Raise (new EnemyIsDeadEvent ());
     }
 
     private IEnumerator SetDestinationAsync ()

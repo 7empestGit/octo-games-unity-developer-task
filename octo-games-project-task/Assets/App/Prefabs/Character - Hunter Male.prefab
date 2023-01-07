@@ -4257,6 +4257,7 @@ GameObject:
   - component: {fileID: 8193271899236832493}
   - component: {fileID: 8193271899236832490}
   - component: {fileID: 8193271899236832488}
+  - component: {fileID: 3874463637531716719}
   m_Layer: 31
   m_Name: Character - Hunter Male
   m_TagString: Player
@@ -4526,13 +4527,37 @@ MonoBehaviour:
   m_DamagePopupManagerID: -1
   m_OnDamageEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3874463637531716719}
+        m_TargetAssemblyTypeName: MainCharacterController, Assembly-CSharp
+        m_MethodName: OnPlayerDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnHealEvent:
     m_PersistentCalls:
       m_Calls: []
   m_OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3874463637531716719}
+        m_TargetAssemblyTypeName: MainCharacterController, Assembly-CSharp
+        m_MethodName: OnPlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_ApplyFallDamage: 0
   m_MinFallDamageHeight: 3
   m_MinFallDamage: 1
@@ -4668,7 +4693,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8192662114356803948}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab006db972ba3a14db5be7a062d0ca4e, type: 3}
   m_Name: 
@@ -4687,7 +4712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8192662114356803948}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c9c18933a275014f9b208ad09865ec5, type: 3}
   m_Name: 
@@ -5011,6 +5036,18 @@ MonoBehaviour:
   m_SolidObjectLayers:
     serializedVersion: 2
     m_Bits: 2415919051
+--- !u!114 &3874463637531716719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8192662114356803948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3454da546ad0547bc72ced2ec6e6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8192662914112666544
 GameObject:
   m_ObjectHideFlags: 0
