@@ -10,18 +10,23 @@ namespace App.Controllers.UI
   {
     [Header ("Links")]
     [SerializeField] private Slider healthSlider;
-    [SerializeField] private TMP_Text healthText; 
+    [SerializeField] private TMP_Text healthText;
+
+    //[Space]
+    //[SerializeField] private TMP_Text currentKilledEnemiesText;
 
     #region Unity Methods
 
     void OnEnable ()
     {
       EventManager.Instance.AddListener<PlayerHealthChanged> (PlayerGotDamagedEventHandler);
+      EventManager.Instance.AddListener<EnemyIsDeadEvent> (EnemyIsDeadEventHandler);
     }
 
     void OnDisable ()
     {
       EventManager.Instance.RemoveListener<PlayerHealthChanged> (PlayerGotDamagedEventHandler);
+      EventManager.Instance.RemoveListener<EnemyIsDeadEvent> (EnemyIsDeadEventHandler);
     }
 
     #endregion
@@ -38,6 +43,11 @@ namespace App.Controllers.UI
     private void PlayerGotDamagedEventHandler (PlayerHealthChanged eventDetails)
     {
       UpdateSliderValues (eventDetails.CurrentPlayerHealth);
+    }
+
+    private void EnemyIsDeadEventHandler (EnemyIsDeadEvent eventDetails)
+    {
+      //currentKilledEnemiesText.text = PlayerPrefs.GetInt ("CurrentKilledEnemies").ToString ();
     }
 
     #endregion

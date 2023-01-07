@@ -10,23 +10,27 @@ namespace App.Controllers
   public class MainCharacterController : MonoBehaviour
   {
     private CharacterHealth characterHealth;
+    private CharacterRespawner characterRespawner;
 
     #region Unity Methods
 
     void OnEnable ()
     {
       EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
-      ToggleInput (false);
+      EventManager.Instance.AddListener<RestartGameEvent> (RestartGameEventHandler);
     }
 
     void Awake ()
     {
+      ToggleInput (false);
       characterHealth = GetComponent<CharacterHealth> ();
+      characterRespawner = GetComponent<CharacterRespawner> ();
     }
 
     void OnDisable ()
     {
       EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
+      EventManager.Instance.AddListener<RestartGameEvent> (RestartGameEventHandler);
     }
 
     #endregion
@@ -36,14 +40,15 @@ namespace App.Controllers
       EventManager.Instance.Raise (new PlayerHealthChanged (characterHealth.HealthValue));
     }
 
-
     public void OnPlayerDeath ()
     {
+      ToggleInput (false);
       EventManager.Instance.Raise (new PlayerIsDeadEvent ());
     }
 
     public void OnPlayerRespawn ()
     {
+      ToggleInput (true);
       EventManager.Instance.Raise (new PlayerHealthChanged (characterHealth.HealthValue));
     }
 
@@ -54,10 +59,17 @@ namespace App.Controllers
       ToggleInput (true);
     }
 
+    private void RestartGameEventHandler (RestartGameEvent eventDetails)
+    {
+      characterRespawner.Respawn ();
+    }
+
     #endregion
 
     private void ToggleInput (bool value)
     {
+      Cursor.visible = !value;
+      Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
       GetComponent<UnityInput> ().enabled = value;
       GetComponent<UltimateCharacterLocomotionHandler> ().enabled = value;
     }

@@ -19,13 +19,23 @@ namespace App.Controllers
     private Transform player;
     private NavMeshAgentMovement navMeshAgentMovement;
 
-    private WaitForSeconds setDestinationDelay = new WaitForSeconds (0.2f);
+    private readonly float setDestinationDelay = 0.2f;
 
     public void ActivateEnemy (Transform target)
     {
       player = target;
       SetTarget ();
       StartCoroutine (SetDestinationAsync ());
+    }
+
+    public void DeactivateEnemy ()
+    {
+      StopCoroutine (SetDestinationAsync ());
+    }
+
+    public void DisableEnemy ()
+    {
+      gameObject.SetActive (false);
     }
 
     private void SetTarget ()
@@ -41,7 +51,7 @@ namespace App.Controllers
 
     private IEnumerator SetDestinationAsync ()
     {
-      yield return setDestinationDelay;
+      yield return new WaitForSeconds (setDestinationDelay);
       navMeshAgentMovement.SetDestination (player.position);
 
       if (gameObject.activeInHierarchy)

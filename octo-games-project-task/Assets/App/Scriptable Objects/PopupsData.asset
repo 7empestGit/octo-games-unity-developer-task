@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupsData:
   - PopupType: 0
-    PopupObject: {fileID: 0}
+    PopupObject: {fileID: 7800026793254291944, guid: 1496f79e65970144ca9ace079c9fbcbe, type: 3}

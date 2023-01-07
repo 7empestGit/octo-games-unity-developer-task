@@ -27,12 +27,16 @@ namespace App.Managers
     {
       EventManager.Instance.AddListener<EnemyIsDeadEvent> (EnemyIsKilledEventHandler);
       EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
+      EventManager.Instance.AddListener<PlayerIsDeadEvent> (PlayerIsDeadEventHandler);
+      EventManager.Instance.AddListener<RestartGameEvent> (RestartGameEventHandler);
     }
 
     void OnDisable ()
     {
       EventManager.Instance.RemoveListener<EnemyIsDeadEvent> (EnemyIsKilledEventHandler);
-      EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
+      EventManager.Instance.RemoveListener<StartGameEvent> (StartGameEventHandler);
+      EventManager.Instance.RemoveListener<PlayerIsDeadEvent> (PlayerIsDeadEventHandler);
+      EventManager.Instance.RemoveListener<RestartGameEvent> (RestartGameEventHandler);
     }
 
     #endregion
@@ -85,6 +89,23 @@ namespace App.Managers
     private void StartGameEventHandler (StartGameEvent eventDetails)
     {
       StartSpawning ();
+    }
+
+    private void PlayerIsDeadEventHandler (PlayerIsDeadEvent eventDetails)
+    {
+      foreach (GameObject enemy in enemyPool)
+      {
+        enemy.GetComponent<EnemyController> ().DeactivateEnemy ();
+      }
+    }
+
+    private void RestartGameEventHandler (RestartGameEvent eventDetails)
+    {
+      foreach (GameObject enemy in enemyPool)
+      {
+        enemy.GetComponent<EnemyController> ().DisableEnemy ();
+      }
+      ActivateFirstInactiveEnemy ();
     }
 
     #endregion

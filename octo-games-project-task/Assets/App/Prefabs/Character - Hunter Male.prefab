@@ -4477,8 +4477,8 @@ MonoBehaviour:
   m_Grouping: -1
   m_MinRespawnTime: 2
   m_MaxRespawnTime: 3
-  m_ScheduleRespawnOnDeath: 1
-  m_ScheduleRespawnOnDisable: 1
+  m_ScheduleRespawnOnDeath: 0
+  m_ScheduleRespawnOnDisable: 0
   m_RespawnAudioClipSet:
     m_AudioConfig: {fileID: 0}
     m_AudioClips: []

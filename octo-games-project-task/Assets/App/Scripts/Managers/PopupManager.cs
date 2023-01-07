@@ -7,6 +7,10 @@ namespace App.Managers.UI
 {
   public class PopupManager : MonoBehaviour
   {
+    [Header ("Links")]
+    [SerializeField] private Transform popupsCanvasParent;
+    [SerializeField] private PopupDataSO popupsData;
+
     #region Unity Methods
 
     void OnEnable ()
@@ -25,7 +29,12 @@ namespace App.Managers.UI
 
     private void ShowPopupEventHandler (ShowPopupEvent eventDetails)
     {
+      GameObject targetPopupObject = popupsData.PopupsData.Find (obj => obj.PopupType.Equals (eventDetails.PopupType)).PopupObject;
 
+      if (targetPopupObject == null)
+        return;
+
+      Instantiate (targetPopupObject, popupsCanvasParent);
     }
 
     #endregion

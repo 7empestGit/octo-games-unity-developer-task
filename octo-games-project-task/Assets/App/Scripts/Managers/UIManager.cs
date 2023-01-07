@@ -26,7 +26,7 @@ namespace App.Managers.UI
 
     private void PlayerIsDeadEventHandler (PlayerIsDeadEvent eventDetails)
     {
-      EventManager.Instance.Raise (new ShowPopupEvent (PopupType.PlayerIsDead));
+      EventManager.Instance.Raise (new ShowPopupEvent (PopupType.DeathScreen));
     }
 
     #endregion
