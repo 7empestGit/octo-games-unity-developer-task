@@ -1,4 +1,5 @@
 using App.GameEvents.UI;
+using App.ScriptableObjects.UI;
 using DynamicBox.EventManagement;
 using UnityEngine;
 

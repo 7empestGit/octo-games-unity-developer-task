@@ -2,11 +2,11 @@ using DynamicBox.EventManagement;
 
 namespace App.GameEvents
 {
-  public class PlayerGotDamagedEvent : GameEvent
+  public class PlayerHealthChanged : GameEvent
   {
     public readonly float CurrentPlayerHealth;
 
-    public PlayerGotDamagedEvent (float currentPlayerHealth)
+    public PlayerHealthChanged (float currentPlayerHealth)
     {
       CurrentPlayerHealth = currentPlayerHealth;
     }

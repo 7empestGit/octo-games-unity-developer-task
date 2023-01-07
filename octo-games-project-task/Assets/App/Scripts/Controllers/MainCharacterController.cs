@@ -16,11 +16,11 @@ namespace App.Controllers
     void OnEnable ()
     {
       EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
+      ToggleInput (false);
     }
 
     void Awake ()
     {
-      ToggleInput (false);
       characterHealth = GetComponent<CharacterHealth> ();
     }
 
@@ -33,12 +33,18 @@ namespace App.Controllers
 
     public void OnPlayerDamage ()
     {
-      EventManager.Instance.Raise (new PlayerGotDamagedEvent (characterHealth.HealthValue));
+      EventManager.Instance.Raise (new PlayerHealthChanged (characterHealth.HealthValue));
     }
+
 
     public void OnPlayerDeath ()
     {
       EventManager.Instance.Raise (new PlayerIsDeadEvent ());
+    }
+
+    public void OnPlayerRespawn ()
+    {
+      EventManager.Instance.Raise (new PlayerHealthChanged (characterHealth.HealthValue));
     }
 
     #region Event Handlers
