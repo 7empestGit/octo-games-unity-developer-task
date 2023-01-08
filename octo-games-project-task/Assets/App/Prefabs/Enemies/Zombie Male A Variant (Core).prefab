@@ -8627,19 +8627,7 @@ MonoBehaviour:
     m_AudioClips: []
   m_OnRespawnEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7697841413191363720}
-        m_TargetAssemblyTypeName: App.Controllers.EnemyController, Assembly-CSharp
-        m_MethodName: OnPlayerDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &4500503017480614687
 MonoBehaviour:
   m_ObjectHideFlags: 0

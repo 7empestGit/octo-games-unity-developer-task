@@ -2,6 +2,7 @@ using App.Enums;
 using App.GameEvents;
 using App.GameEvents.UI;
 using DynamicBox.EventManagement;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace App.Managers.UI
@@ -26,7 +27,13 @@ namespace App.Managers.UI
 
     private void PlayerIsDeadEventHandler (PlayerIsDeadEvent eventDetails)
     {
+      int currentKilledEnemies = PlayerPrefs.GetInt ("CurrentKilledEnemies");
+      int killedEnemiesRecord = PlayerPrefs.GetInt ("KilledEnemiesRecord");
+
       EventManager.Instance.Raise (new ShowPopupEvent (PopupType.DeathScreen));
+
+      List<object> popupParameters = new List<object> () { currentKilledEnemies, killedEnemiesRecord };
+      EventManager.Instance.Raise (new InitializePopupEvent (PopupType.DeathScreen, popupParameters));
     }
 
     #endregion

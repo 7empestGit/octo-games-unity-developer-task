@@ -1,4 +1,5 @@
 using App.GameEvents;
+using App.GameEvents.UI;
 using DynamicBox.EventManagement;
 using TMPro;
 using UnityEngine;
@@ -12,21 +13,21 @@ namespace App.Controllers.UI
     [SerializeField] private Slider healthSlider;
     [SerializeField] private TMP_Text healthText;
 
-    //[Space]
-    //[SerializeField] private TMP_Text currentKilledEnemiesText;
+    [Space]
+    [SerializeField] private TMP_Text currentKilledEnemiesText;
 
     #region Unity Methods
 
     void OnEnable ()
     {
       EventManager.Instance.AddListener<PlayerHealthChanged> (PlayerGotDamagedEventHandler);
-      EventManager.Instance.AddListener<EnemyIsDeadEvent> (EnemyIsDeadEventHandler);
+      EventManager.Instance.AddListener<UpdateHUDEvent> (UpdateHUDEventHandler);
     }
 
     void OnDisable ()
     {
       EventManager.Instance.RemoveListener<PlayerHealthChanged> (PlayerGotDamagedEventHandler);
-      EventManager.Instance.RemoveListener<EnemyIsDeadEvent> (EnemyIsDeadEventHandler);
+      EventManager.Instance.RemoveListener<UpdateHUDEvent> (UpdateHUDEventHandler);
     }
 
     #endregion
@@ -45,9 +46,9 @@ namespace App.Controllers.UI
       UpdateSliderValues (eventDetails.CurrentPlayerHealth);
     }
 
-    private void EnemyIsDeadEventHandler (EnemyIsDeadEvent eventDetails)
+    private void UpdateHUDEventHandler (UpdateHUDEvent eventDetails)
     {
-      //currentKilledEnemiesText.text = PlayerPrefs.GetInt ("CurrentKilledEnemies").ToString ();
+      currentKilledEnemiesText.text = eventDetails.CurrentKilledEnemies.ToString ();
     }
 
     #endregion
