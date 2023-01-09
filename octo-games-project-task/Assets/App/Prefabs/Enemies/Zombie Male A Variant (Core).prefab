@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 2237647115682250766}
   - component: {fileID: 6379225237673891083}
   - component: {fileID: 7781290147592090664}
+  - component: {fileID: 815004215143182937}
   m_Layer: 31
   m_Name: CapsuleCollider
   m_TagString: Untagged
@@ -241,6 +242,20 @@ MonoBehaviour:
   m_PositionBone: {fileID: 5177545368856981343}
   m_HeightOverride: -1
   m_CenterOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &815004215143182937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142854196688508224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &1235091670233825918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,6 +1755,7 @@ GameObject:
   - component: {fileID: 9076722297646106936}
   - component: {fileID: 8995848306291233938}
   - component: {fileID: 1694358083906323442}
+  - component: {fileID: 4268455304331729124}
   m_Layer: 30
   m_Name: LowerLeg_L
   m_TagString: Untagged
@@ -1838,6 +1854,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &4268455304331729124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173588056761828821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5173606452532620209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,6 +2023,7 @@ GameObject:
   - component: {fileID: 5060492124674917402}
   - component: {fileID: 5548972393418660392}
   - component: {fileID: 8021654076020536261}
+  - component: {fileID: 7762010406953849596}
   m_Layer: 30
   m_Name: LowerLeg_R
   m_TagString: Untagged
@@ -2091,6 +2122,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7762010406953849596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173815607980779183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5173820773690194403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,6 +2215,7 @@ GameObject:
   - component: {fileID: 1201771965561370369}
   - component: {fileID: 3343042118557728644}
   - component: {fileID: 5041166173584015532}
+  - component: {fileID: 3314752576339116660}
   m_Layer: 30
   m_Name: Shoulder_R
   m_TagString: Untagged
@@ -2268,6 +2314,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3314752576339116660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173837929209420427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5173854603710881077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,6 +2371,7 @@ GameObject:
   - component: {fileID: 9089492671416188018}
   - component: {fileID: 5140562824687480641}
   - component: {fileID: 7746354067440506453}
+  - component: {fileID: 5821453803830483547}
   m_Layer: 30
   m_Name: Elbow_R
   m_TagString: Untagged
@@ -2409,6 +2470,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5821453803830483547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173912388836843913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5173936724136018911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3269,7 @@ GameObject:
   - component: {fileID: 1730374889278522858}
   - component: {fileID: 9104034063490026607}
   - component: {fileID: 6724151691981745795}
+  - component: {fileID: 7460472571160466431}
   m_Layer: 30
   m_Name: UpperLeg_R
   m_TagString: Untagged
@@ -3292,6 +3368,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7460472571160466431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174060659143832745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5174077938643989843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,6 +3484,7 @@ GameObject:
   - component: {fileID: 7093645773029140000}
   - component: {fileID: 1490666672365861709}
   - component: {fileID: 2591491353567386271}
+  - component: {fileID: 6242691212929571521}
   m_Layer: 30
   m_Name: Elbow_L
   m_TagString: Untagged
@@ -3492,6 +3583,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6242691212929571521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174169299660355013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5174171909958483573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,6 +3639,7 @@ GameObject:
   - component: {fileID: 5177545368856981343}
   - component: {fileID: 1700169755820328903}
   - component: {fileID: 903838779423061939}
+  - component: {fileID: 1401927930853789260}
   m_Layer: 30
   m_Name: Root
   m_TagString: Untagged
@@ -3585,6 +3691,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1401927930853789260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174174930292641669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5174186422008686325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,6 +3717,7 @@ GameObject:
   - component: {fileID: 1391308002634358864}
   - component: {fileID: 1321353172006606883}
   - component: {fileID: 7798825565984435263}
+  - component: {fileID: 2566225567902527929}
   m_Layer: 30
   m_Name: Spine_01
   m_TagString: Untagged
@@ -3694,6 +3815,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2566225567902527929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174186422008686325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5174187815272641601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,6 +4133,7 @@ GameObject:
   - component: {fileID: 5243172273679038545}
   - component: {fileID: 3254451344735958806}
   - component: {fileID: 449252257484857962}
+  - component: {fileID: 8748821667531733184}
   m_Layer: 30
   m_Name: Head
   m_TagString: Untagged
@@ -4101,6 +4237,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8748821667531733184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174257469098472057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5174273369050915261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4294,7 @@ GameObject:
   - component: {fileID: 7266035690952303439}
   - component: {fileID: 536144861318700396}
   - component: {fileID: 8226173193227298366}
+  - component: {fileID: 731892810339321029}
   m_Layer: 30
   m_Name: Shoulder_L
   m_TagString: Untagged
@@ -4242,6 +4393,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &731892810339321029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174298676110360299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5174302548950917925
 GameObject:
   m_ObjectHideFlags: 0
@@ -4560,6 +4725,7 @@ GameObject:
   - component: {fileID: 4118956086667040584}
   - component: {fileID: 3595567209213517623}
   - component: {fileID: 7865740113701740687}
+  - component: {fileID: 5325655917155854432}
   m_Layer: 30
   m_Name: UpperLeg_L
   m_TagString: Untagged
@@ -4658,6 +4824,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5325655917155854432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174604016817555825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &5174615258508306251
 GameObject:
   m_ObjectHideFlags: 0
@@ -5851,6 +6031,7 @@ GameObject:
   - component: {fileID: 801684798791872457}
   - component: {fileID: 3489333307039580091}
   - component: {fileID: 5179903429219694123}
+  - component: {fileID: 678377151830402455}
   m_Layer: 30
   m_Name: ZombieHandsR
   m_TagString: Untagged
@@ -6004,6 +6185,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &678377151830402455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9007035269395915175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
 --- !u!1 &9011313627359783227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,6 +6255,7 @@ GameObject:
   - component: {fileID: 4884946170881969951}
   - component: {fileID: 6321326263288935397}
   - component: {fileID: 3888278565080808087}
+  - component: {fileID: 8527624050079682758}
   m_Layer: 30
   m_Name: ZombieHandsL
   m_TagString: Untagged
@@ -6213,3 +6409,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8527624050079682758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074030523057914860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
+  m_AllowDecals: 0
