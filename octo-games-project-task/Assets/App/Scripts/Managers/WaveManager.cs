@@ -2,6 +2,7 @@ using App.Controllers;
 using App.GameEvents;
 using DynamicBox.EventManagement;
 using Opsive.Shared.Game;
+using Opsive.UltimateCharacterController.Game;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace App.Managers
     [SerializeField] private int enemyPoolSize = 10;
 
     [Header ("Links")]
+    [SerializeField] private SpawnPoint spawnPoint;
     [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private Transform player;
 
@@ -62,13 +64,13 @@ namespace App.Managers
 
         // activate first enemy without delay
         if (i == 0)
-          ActivateFirstInactiveEnemy ();
+          SpawnFirstInactiveEnemy ();
 
         await Task.Delay (enemyPoolSpawnDelay);
       }
     }
 
-    private void ActivateFirstInactiveEnemy ()
+    private void SpawnFirstInactiveEnemy ()
     {
       GameObject obj = enemyPool.Find (o => !o.activeInHierarchy);
 
@@ -76,14 +78,26 @@ namespace App.Managers
         return;
 
       obj.SetActive (true);
+      SetEnemyPlacement (obj);
       obj.GetComponent<EnemyController> ().ActivateEnemy (player);
+    }
+
+    private void SetEnemyPlacement (GameObject obj)
+    {
+      Vector3 randomPositon = Vector3.zero;
+      Quaternion randomRotation = Quaternion.identity;
+      if (spawnPoint.GetPlacement (obj, ref randomPositon, ref randomRotation))
+      {
+        obj.transform.position = randomPositon;
+        obj.transform.rotation = randomRotation;
+      }
     }
 
     #region Event Handlers
 
     private void EnemyIsKilledEventHandler (EnemyIsDeadEvent eventDetails)
     {
-      ActivateFirstInactiveEnemy ();
+      SpawnFirstInactiveEnemy ();
     }
 
     private void StartGameEventHandler (StartGameEvent eventDetails)
@@ -105,7 +119,7 @@ namespace App.Managers
       {
         enemy.GetComponent<EnemyController> ().DisableEnemy ();
       }
-      ActivateFirstInactiveEnemy ();
+      SpawnFirstInactiveEnemy ();
     }
 
     #endregion

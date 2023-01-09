@@ -13679,6 +13679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPoolSize: 10
+  spawnPoint: {fileID: 1422890523}
   enemyPrefabs:
   - {fileID: 5174615258508306251, guid: e387094fca0bc3a4181800fa960ea16b, type: 3}
   - {fileID: 6453996809452952335, guid: f4a82ffb081830a42911195a47b3838d, type: 3}

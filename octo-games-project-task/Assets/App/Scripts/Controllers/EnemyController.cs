@@ -35,6 +35,7 @@ namespace App.Controllers
 
     public void DisableEnemy ()
     {
+      StopCoroutine (SetDestinationAsync ());
       gameObject.SetActive (false);
     }
 
@@ -57,6 +58,7 @@ namespace App.Controllers
       if (gameObject.activeInHierarchy)
         StartCoroutine(SetDestinationAsync ());
 
+      yield return new WaitForSeconds (0.5f);
       if (navMeshAgentMovement.HasArrived)
         Attack ();
     }
