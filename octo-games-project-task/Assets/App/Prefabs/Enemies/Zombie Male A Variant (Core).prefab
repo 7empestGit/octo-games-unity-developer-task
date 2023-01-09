@@ -8731,7 +8731,7 @@ MonoBehaviour:
   - m_Object: {fileID: 5177823743489024855}
     m_Group: 0
     m_FlippedFootprint: 1
-  m_MoveDirectionFrameCount: 7
+  m_MoveDirectionFrameCount: 30
   m_FootOffset: 0.07
   m_MinTriggerInterval: 0.1
   m_RequireMovement: 1
