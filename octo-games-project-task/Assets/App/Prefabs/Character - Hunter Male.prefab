@@ -4585,8 +4585,7 @@ MonoBehaviour:
       m_ItemSubstateIndex: 2
       m_AudioClipSet:
         m_AudioConfig: {fileID: 0}
-        m_AudioClips:
-        - {fileID: 8300000, guid: 5b7a7b2bcaf82d944905bf72bdf418cb, type: 3}
+        m_AudioClips: []
   m_ConsumableItemDefinition: {fileID: -3989310912847611534, guid: 625b57885e03cfd40b6a7d39591f062e, type: 2}
   m_FireMode: 0
   m_FireType: 0
