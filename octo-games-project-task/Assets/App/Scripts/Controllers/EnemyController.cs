@@ -23,6 +23,8 @@ namespace App.Controllers
 
     public void ActivateEnemy (Transform target)
     {
+      GetComponent<Animator> ().enabled = true;
+      locomotion.enabled = true;
       player = target;
       SetTarget ();
       StartCoroutine (SetDestinationAsync ());
@@ -30,6 +32,8 @@ namespace App.Controllers
 
     public void DeactivateEnemy ()
     {
+      GetComponent<Animator> ().enabled = false;
+      locomotion.enabled = false;
       StopCoroutine (SetDestinationAsync ());
     }
 

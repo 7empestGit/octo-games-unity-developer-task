@@ -1949,7 +1949,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1678718525059512, guid: 77c2e2e401f5ad04ea0f6853a3f3558d, type: 3}
   m_PrefabInstance: {fileID: 194701148}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &227326386
+--- !u!65 &227326389
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10582,7 +10582,7 @@ MonoBehaviour:
   m_RandomShapeSpawn: 1
   m_GroundSnapHeight: 2
   m_RandomDirection: 0
-  m_CheckForObstruction: 0
+  m_CheckForObstruction: 1
   m_MaxCollisionCount: 20
   m_ObstructionLayers:
     serializedVersion: 2
