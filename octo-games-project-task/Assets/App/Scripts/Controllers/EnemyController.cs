@@ -42,7 +42,6 @@ namespace App.Controllers
     private void SetTarget ()
     {
       navMeshAgentMovement = locomotion.GetAbility<NavMeshAgentMovement> ();
-      navMeshAgentMovement.ArrivedDistance = 1f;
     }
 
     public void OnPlayerDeath ()
