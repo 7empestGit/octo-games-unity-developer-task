@@ -56,11 +56,14 @@ namespace App.Controllers
 
     private void StartGameEventHandler (StartGameEvent eventDetails)
     {
+      characterRespawner.Respawn ();
+      EventManager.Instance.Raise (new PlayerHealthChanged (characterHealth.HealthValue));
       ToggleInput (true);
     }
 
     private void RestartGameEventHandler (RestartGameEvent eventDetails)
     {
+      EventManager.Instance.Raise (new PlayerHealthChanged (characterHealth.HealthValue));
       characterRespawner.Respawn ();
     }
 

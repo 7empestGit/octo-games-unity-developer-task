@@ -1,5 +1,6 @@
 using App.Controllers;
 using App.GameEvents;
+using App.GameEvents.UI;
 using DynamicBox.EventManagement;
 using Opsive.Shared.Game;
 using Opsive.UltimateCharacterController.Game;
@@ -31,6 +32,7 @@ namespace App.Managers
       EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
       EventManager.Instance.AddListener<PlayerIsDeadEvent> (PlayerIsDeadEventHandler);
       EventManager.Instance.AddListener<RestartGameEvent> (RestartGameEventHandler);
+      EventManager.Instance.AddListener<OpenMainMenuGameEvent> (OpenMainMenuGameEventHandler);
     }
 
     void OnDisable ()
@@ -39,6 +41,7 @@ namespace App.Managers
       EventManager.Instance.RemoveListener<StartGameEvent> (StartGameEventHandler);
       EventManager.Instance.RemoveListener<PlayerIsDeadEvent> (PlayerIsDeadEventHandler);
       EventManager.Instance.RemoveListener<RestartGameEvent> (RestartGameEventHandler);
+      EventManager.Instance.RemoveListener<OpenMainMenuGameEvent> (OpenMainMenuGameEventHandler);
     }
 
     #endregion
@@ -107,21 +110,36 @@ namespace App.Managers
 
     private void PlayerIsDeadEventHandler (PlayerIsDeadEvent eventDetails)
     {
-      foreach (GameObject enemy in enemyPool)
-      {
-        enemy.GetComponent<EnemyController> ().DeactivateEnemy ();
-      }
+      DeactivateAllEnemies ();
     }
 
     private void RestartGameEventHandler (RestartGameEvent eventDetails)
+    {
+      DisableAllEnemies ();
+      SpawnFirstInactiveEnemy ();
+    }
+
+    private void OpenMainMenuGameEventHandler (OpenMainMenuGameEvent eventDetails)
+    {
+      DisableAllEnemies ();
+    }
+
+    #endregion
+
+    private void DisableAllEnemies ()
     {
       foreach (GameObject enemy in enemyPool)
       {
         enemy.GetComponent<EnemyController> ().DisableEnemy ();
       }
-      SpawnFirstInactiveEnemy ();
     }
 
-    #endregion
+    private void DeactivateAllEnemies ()
+    {
+      foreach (GameObject enemy in enemyPool)
+      {
+        enemy.GetComponent<EnemyController> ().DeactivateEnemy ();
+      }
+    }
   }
 }

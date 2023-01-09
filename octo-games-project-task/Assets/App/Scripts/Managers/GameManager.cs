@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
   {
     EventManager.Instance.AddListener<EnemyIsDeadEvent> (EnemyIsDeadEventHandler);
     EventManager.Instance.AddListener<RestartGameEvent> (RestartGameEventHandler);
+    EventManager.Instance.AddListener<StartGameEvent> (StartGameEventHandler);
   }
 
   void Awake ()
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
   {
     EventManager.Instance.RemoveListener<EnemyIsDeadEvent> (EnemyIsDeadEventHandler);
     EventManager.Instance.RemoveListener<RestartGameEvent> (RestartGameEventHandler);
+    EventManager.Instance.RemoveListener<StartGameEvent> (StartGameEventHandler);
   }
 
   #endregion
@@ -51,12 +53,23 @@ public class GameManager : MonoBehaviour
       PlayerPrefs.SetInt ("KilledEnemiesRecord", currentKilledEnemies);
   }
 
+  private void StartGameEventHandler (StartGameEvent eventDetails)
+  {
+    ResetCurrentKilledEnemies ();
+    EventManager.Instance.Raise (new UpdateHUDEvent (currentKilledEnemies));
+  }
+
   private void RestartGameEventHandler (RestartGameEvent eventDetails)
   {
-    currentKilledEnemies = 0;
-    PlayerPrefs.SetInt ("CurrentKilledEnemies", currentKilledEnemies);
+    ResetCurrentKilledEnemies ();
     EventManager.Instance.Raise (new UpdateHUDEvent (currentKilledEnemies));
   }
 
   #endregion
+
+  private void ResetCurrentKilledEnemies ()
+  {
+    currentKilledEnemies = 0;
+    PlayerPrefs.SetInt ("CurrentKilledEnemies", currentKilledEnemies);
+  }
 }

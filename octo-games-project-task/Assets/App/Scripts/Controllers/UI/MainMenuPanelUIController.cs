@@ -1,6 +1,7 @@
 using DynamicBox.EventManagement;
 using App.GameEvents;
 using UnityEngine;
+using App.GameEvents.UI;
 
 namespace App.Controllers.UI
 {
@@ -10,11 +11,35 @@ namespace App.Controllers.UI
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject howToPlayPanel;
 
+    #region Unity Methods
+
+    void OnEnable ()
+    {
+      EventManager.Instance.AddListener<OpenMainMenuGameEvent> (OpenMainMenuGameEventHandler);
+    }
+
+    void OnDisable ()
+    {
+      EventManager.Instance.RemoveListener<OpenMainMenuGameEvent> (OpenMainMenuGameEventHandler);
+    }
+
+    #endregion
+
+    #region Event Handlers
+
+    private void OpenMainMenuGameEventHandler (OpenMainMenuGameEvent eventDetails)
+    {
+      HideAllPanels ();
+      mainMenuPanel.SetActive (true);
+    }
+
+    #endregion
+
     #region Button Methods
 
     public void StartGameClicked ()
     {
-      gameObject.SetActive (false);
+      HideAllPanels ();
       EventManager.Instance.Raise (new StartGameEvent ());
     }
 

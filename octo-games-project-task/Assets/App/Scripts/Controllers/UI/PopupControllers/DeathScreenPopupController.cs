@@ -46,6 +46,12 @@ namespace App.Controllers.UI.Popups
       ClosePopup ();
     }
 
+    public void OnMainMenuButtonClicked ()
+    {
+      EventManager.Instance.Raise (new OpenMainMenuGameEvent ());
+      ClosePopup ();
+    }
+
     private void ClosePopup ()
     {
       Destroy (gameObject);
