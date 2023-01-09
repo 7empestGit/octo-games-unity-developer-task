@@ -14,15 +14,39 @@ namespace App.Controllers
     [Header ("Links")]
     [SerializeField] private ItemDefinitionBase bulletItem;
 
+    [Space]
+    [SerializeField] private Animation crateLidAnimation;
+    [SerializeField] private AnimationClip openLidClip;
+    [SerializeField] private AnimationClip closeLidClip;
+
     private const int maxRefillValue = 100;
 
-    public void OnTriggerEnter (Collider other)
+    #region Unity Methods
+
+    void OnTriggerEnter (Collider other)
     {
       if (other.gameObject.layer != LayerMask.NameToLayer ("Character"))
         return;
 
+      ToggleLidAnimation (true);
       AdjustAmmo (other.gameObject);
       EventManager.Instance.Raise (new ShowPopupEvent (PopupType.AmmoCrateRefill));
+    }
+
+    void OnTriggerExit (Collider other)
+    {
+      if (other.gameObject.layer != LayerMask.NameToLayer ("Character"))
+        return;
+
+      ToggleLidAnimation (false);
+    }
+
+    #endregion
+
+    private void ToggleLidAnimation (bool toOpen)
+    {
+      crateLidAnimation.clip = toOpen ? openLidClip : closeLidClip;
+      crateLidAnimation.PlayQueued (crateLidAnimation.clip.name);
     }
 
     private void AdjustAmmo (GameObject player)
