@@ -15,3 +15,5 @@ MonoBehaviour:
   popupsData:
   - PopupType: 0
     PopupObject: {fileID: 7800026793254291944, guid: 1496f79e65970144ca9ace079c9fbcbe, type: 3}
+  - PopupType: 1
+    PopupObject: {fileID: 7800026793254291944, guid: b96e49f0d5656f9478d16ec76d98332c, type: 3}
