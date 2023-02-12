@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to Endless Shooter, an endless third-person shooter game developed using Unity Engine. The purpose of this project is to showcase my ability to work with Unity assets to create a quick prototype. The game is built for the PC platform and will provide a fun and exciting experience for players.
+Welcome to Endless Shooter, an endless third-person shooter game developed using Unity Engine. The purpose of this project is to showcase my ability to work with Unity assets to create a quick prototype. The game was built in a total of ~40 hours and is intended for the PC platform, providing a fun and exciting experience for players.
 
 ## Assets Used
 
@@ -29,7 +29,7 @@ To manage the development of the game, I used the following plan:
    - The character was set up using any model from the environment pack.
    - The character was equipped with shooting capabilities (ammo is limited).
    - Movement animation was replaced using Mixamo.com.
-   - A primitive enemy (zombie) was added to the game. The zombie will attack the player and will have an endless spawn.
+   - A primitive enemy (zombie) was added to the game. The zombie will attack the player and will have an endless spawn, with the endless spawn logic implemented by me using a WaveManager.
    - On death, the zombie will become a Ragdoll and will be thrown away with the last shot.
 
 3. **Stage 3 - UI & SFX**
@@ -42,4 +42,4 @@ To manage the development of the game, I used the following plan:
 
 ## Conclusion
 
-This project demonstrates my ability to work with Unity assets and manage the development process from start to finish. I hope you enjoy playing Endless Shooter!
+This project demonstrates my ability to work with Unity assets and manage the development process from start to finish in a short amount of time (~40 hours). I also implemented the endless spawn logic for the enemy using a WaveManager. I hope you enjoy playing Endless Shooter!
